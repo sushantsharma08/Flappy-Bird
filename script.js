@@ -3,7 +3,7 @@ var block = document.getElementById('block');
 var character = document.getElementById('character');
 const image = document.querySelector('.bird');
 var jumping = 0;
-var counter=0;
+var counter=-1;
 
 hole.addEventListener('animationiteration', () => {
     var random = -((Math.random()*300)+150);
@@ -22,7 +22,7 @@ var cTop = -(500-characterTop);
 if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
     alert("Game Over. Score: "+counter);
     character.style.top = "100px";
-    counter = 0;
+    counter = -1;
 }
 }, 10);
 
