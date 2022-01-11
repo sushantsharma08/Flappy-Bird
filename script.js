@@ -45,3 +45,11 @@ function jump() {
         jumpCount++;
     },10);
 }
+
+// key event
+
+document.addEventListener('keydown', function(e){
+    if(e.keyCode===32){
+        jump();
+    }
+});
