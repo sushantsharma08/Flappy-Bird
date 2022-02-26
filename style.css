@@ -8,7 +8,10 @@
     border: 1px solid black;
     margin: auto;
     overflow: hidden;
-    background: linear-gradient(-60deg, rgba(118, 230, 118, 0.61), rgba(95, 95, 247, 0.616), rgba(247, 111, 247, 0.616));
+    /* background: linear-gradient(-60deg, rgba(118, 230, 118, 0.61), rgba(95, 95, 247, 0.616), rgba(247, 111, 247, 0.616)); */
+    background-image: url(img/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #block{
     width: 50px;
@@ -16,6 +19,9 @@
     background-color: black;
     position: relative;
     left: 400px;
+    
+}
+.move{
     animation: block 2s infinite linear;
 }
 @keyframes block{
@@ -29,7 +35,6 @@
     position: relative;
     left: 400px;
     top: -500px;
-    animation: block 2s infinite linear;
 }
 #character{
     width: 20px;
