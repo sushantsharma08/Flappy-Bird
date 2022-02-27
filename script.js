@@ -2,21 +2,27 @@ let hole = document.getElementById('hole');
 let block = document.getElementById('block');
 let character = document.getElementById('character');
 const image = document.querySelector('.bird');
+const gameSpace = document.getElementById("game");
 let jumping = 0;
 let counter = 0;
 let playing = 0;
 const start = document.getElementById("startBTN");
 const score = document.getElementById("score");
+const scoreDetails = document.getElementById("scoreDetails");
+const gameOver = document.getElementById("gameover");
 let currentScore;
+
 
         // starting conditions
 
-  function initial(){
+  function reset(){
       character.classList.add("invisible");
         block.classList.add("invisible");
         hole.classList.add("invisible");
         block.classList.remove("move");
         hole.classList.remove("move");
+        start.textContent="Again";
+        scoreDetails.classList.remove("invisible");
         counter = 0;
         currentScore=0;
         playing=0;
@@ -32,6 +38,9 @@ start.addEventListener("click", function () {
     block.classList.add("move");
     hole.classList.add("move");
     start.classList.add("invisible");
+    gameOver.classList.add("invisible");
+    scoreDetails.classList.add("invisible");
+    gameSpace.style.border = "1px solid black";
     score.textContent = 0;
 });
 
@@ -58,14 +67,15 @@ setInterval(function () {
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop = -(500 - characterTop);
 
-    // game over
+                  // game over
     
     if ((characterTop > 480) || ((blockLeft < 20) && (blockLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 130)))) {
-        // alert("Game Over. Score: "+counter);
         score.textContent = currentScore;
         character.style.top = "100px";
         start.classList.remove("invisible");
-        initial();
+        gameSpace.style.border = "7px solid #96101085";
+        gameOver.classList.remove("invisible");
+        reset();
     }
 }, 10);
 
