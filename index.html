@@ -10,23 +10,33 @@
 </head>
 <body class="h-screen ">
   <section class="main flex ">
-    <div id="game" class="rounded-[2%]">
+    <div id="game" class="rounded-[12px]">
         <div id="block" class="invisible"></div>
         <div id="hole" class="invisible"></div>
         <div id="character" class="invisible"><img src="img/bird.png" alt="" height="20px" class="bird"></div>   
       </div>
-      <div id="gameover" class="invisible text-3xl font-serif text-red-600/75 animate-pulse">GAME OVER</div>
+      <div id="gameover" class=" invisible animate-pulse absolute z-10">
+      <div  class=" text-3xl font-serif text-red-600/75  text-center">GAME OVER</div>
+      <div class="flex w-max mx-auto font-sans text-xl text-[#000000cc] font-semibold">
+        <span id="scoreDetails" class="mt-[6rem] p-[15px] rounded-[10%]">
+            <span>HIGH SCORE: </span>
+            <span id="HighScore">0</span>
+        </span>
+      </div>
+    </div>
   </section>
 
   <section class="flex pt-[4%] justify-around">
-     <div>
-        <button id="startBTN" class=" bg-emerald-600/25 m-[3%] py-[5%] px-[20%] border-2 border-emerald-300/25 rounded-[10%] text-2xl">Start</button>
+     <div class="flex">
+        <button id="startBTN" class=" bg-emerald-600/25 p-[8px] px-[20px] border-2 border-emerald-300/25 rounded-[10%] text-2xl">Start</button>
     </div>
-    <div>
-        <span id="scoreDetails" class=" bg-lime-500/50 m-[3%] my-[5%] py-[5%] px-[10%] border-2 border-lime-600/25  text-2xl">
-            <span>Score:</span><span id="score">0</span>
+    <div class="flex">
+        <span id="scoreDetails" class=" bg-lime-500/50 p-[8px] px-[20px] border-2 border-lime-600/25 rounded-[10%] text-2xl">
+            <span>Score: </span>
+            <span id="score">0</span>
         </span>
     </div>
+
   </section>
 </body>
 <script src="script.js"></script>

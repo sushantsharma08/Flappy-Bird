@@ -1,6 +1,7 @@
 let hole = document.getElementById('hole');
 let block = document.getElementById('block');
 let character = document.getElementById('character');
+let highScoreBlock = document.getElementById('HighScore');
 const image = document.querySelector('.bird');
 const gameSpace = document.getElementById("game");
 let jumping = 0;
@@ -11,7 +12,17 @@ const score = document.getElementById("score");
 const scoreDetails = document.getElementById("scoreDetails");
 const gameOver = document.getElementById("gameover");
 let currentScore;
+let highScore =0; 
 
+        //check HIGH SCORE
+        
+        function checkHighScore() {
+            if (highScore<currentScore) {
+                highScore=currentScore;
+                console.log(highScore);
+                highScoreBlock.textContent = highScore;
+            }
+        }
 
         // starting conditions
 
@@ -75,7 +86,9 @@ setInterval(function () {
         start.classList.remove("invisible");
         gameSpace.style.border = "7px solid #96101085";
         gameOver.classList.remove("invisible");
+        checkHighScore();
         reset();
+        
     }
 }, 10);
 
